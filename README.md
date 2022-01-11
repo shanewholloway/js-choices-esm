@@ -18,5 +18,5 @@ import Choices, {templates} from 'choices-esm';
 
 ## License
 
-[MIT License](./LICENSE) -- same as [Choices.js/LICENSE]()
+[MIT License](./LICENSE) -- same as [Choices.js/LICENSE](https://github.com/Choices-js/Choices/blob/master/LICENSE)
 
