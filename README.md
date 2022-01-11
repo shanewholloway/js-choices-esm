@@ -1,6 +1,6 @@
 # Choices-esm.js 
 
-An ES Modules build of [Choices.js](https://github.com/jshjohnson/Choices#readme) via Rollup and TypeScript.
+An ES Module build of [Choices.js](https://github.com/jshjohnson/Choices#readme) TypeScript via Rollup.
 
 ## Use
 
