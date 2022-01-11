@@ -1,0 +1,63 @@
+{
+  "name": "choices-esm.js",
+  "version": "10.0.0-0",
+  "description": "An ES module based vanilla JS customisable text input/select box plugin",
+  "contributors": [
+    "Josh Johnson (author of choices.js)",
+    "Shane Holloway (ES module packaging)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "customisable",
+    "input",
+    "select",
+    "vanilla",
+    "plugin",
+    "esm",
+    "module",
+    "mjs",
+    "js"
+  ],
+  "homepage": "https://github.com/shanewholloway/js-choices-esm#readme",
+  "bugs": {
+    "url": "https://github.com/shanewholloway/js-choices-esm/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shanewholloway/js-choices-esm.git"
+  },
+  "files": [
+    "dist/",
+    "esm/",
+    "styles/",
+    "types/"
+  ],
+  "type": "module",
+  "module": "./esm/choices-esm.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    "./esm/*": "./esm/*",
+    ".": "./esm/choices-esm.js"
+  },
+  "workspaces": [],
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "choices.js": "^10.0.0",
+    "rollup": "^2.63.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "scripts": {
+    "clean": "rm -rf ./esm ./dist ./styles ./types",
+    "prebuild": "test -d ./node_modules || npm ci",
+    "build": "npm run build:tsc && npm run build:esm",
+    "prebuild:tsc": "rm -rf dist styles types",
+    "cp:styles": "cp -R ./node_modules/choices.js/public/assets/styles ./styles",
+    "cp:types": "cp -R ./node_modules/choices.js/public/types/src ./types",
+    "build:tsc": "tsc && npm run cp:types && npm run cp:styles",
+    "build:esm": "rollup --config",
+    "postbuild:esm": "npm run compress",
+    "compress": "brotli -f -k esm/*.min.js ; gzip -f -k esm/*.min.js"
+  }
+}

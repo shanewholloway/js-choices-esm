@@ -1,0 +1,12 @@
+cjs/
+esm/
+umd/
+dist/
+public/
+types/
+styles/
+node_modules/
+npm-debug.log
+tags
+.env
+.hggitignore
