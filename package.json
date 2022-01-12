@@ -1,6 +1,6 @@
 {
   "name": "choices-esm.js",
-  "version": "10.0.0-0",
+  "version": "10.0.0-1",
   "description": "An ES module based vanilla JS customisable text input/select box plugin",
   "contributors": [
     "Josh Johnson (author of choices.js)",
@@ -34,6 +34,7 @@
   ],
   "type": "module",
   "module": "./esm/choices-esm.js",
+  "browser": "./esm/choices-esm.min.js",
   "types": "./types/index.d.ts",
   "exports": {
     "./esm/*": "./esm/*",
