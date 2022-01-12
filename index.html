@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>choices-esm.js</title>
+
+  <link rel='icon' href='data:image/png;base64,' />
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/choices-esm.js@10.0.0-1/styles/choices.css' crossorigin='anonymous'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/choices-esm.js@10.0.0-1/styles/base.css' crossorigin='anonymous'>
+</head>
+
+<body>
+  <main class='container'>
+    <section class='section'>
+      <h1>Choices-esm.js</h1>
+
+      <label for='first'>Text Input</label>
+      <input id='first' class='demo-input form-control' type='text' />
+
+      <label for='second'>Single select</label>
+      <select id='second' class='demo-select form-control' ></select>
+
+      <label for='third'>Multi select</label>
+      <select id='third' class='demo-multi form-control' multiple ></select>
+    </section>
+  </main>
+
+  <script type=module>
+    import Choices from 'https://cdn.jsdelivr.net/npm/choices-esm.js@10.0.0-1/esm/choices-esm.js'
+    //import Choices from './esm/choices-esm.js'
+
+    let choices = [
+        { value: 'One', label: 'Label One' },
+        { value: 'Two', label: 'Label Two' },
+        { value: 'Three', label: 'Label Three' },
+      ]
+
+    let demo_input = new Choices('.demo-input', {allowHTML: false, choices})
+    let demo_select = new Choices('.demo-select', {allowHTML: false, choices})
+    let demo_multi = new Choices('.demo-multi', {allowHTML: false, choices})
+  </script>
+</body>
+</html>
+
